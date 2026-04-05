@@ -1,40 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Seneshka Randilini | Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">SENESHKA</a>
 
-        <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="#" >Services</a>
-            <a href="#" >Skills</a>
-            <a href="#" >Education</a>
-            <a href="#" >Experience</a>
-            <a href="#" >Contact</a>
-        </nav>
-    </header>
-    <section class="home">
-        <div class="home-img">
-            <img src="dp.jpeg" alt="">
-        </div>
-        <div class="home-content">
-            <h1>Hello,It's <span>Seneshka</span></h1>
-            <h3 class="typing-text">I'm a <span>Software</span><span>Engineer</span></h3>
-            <p>
-              "Code. Create. Innovate." — it's more than just words; it's how I build.
-              I'm a Software Engineer who brings ideas to life through interactive web applications. By blending technical expertise with user-centered design, I create digital experiences that are both functional and memorable.
+<!-- NAV -->
+<nav id="nav">
+    <a href="#hero" class="logo">SR<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">Available for opportunities</div>
+            <h1>Seneshka<br>Randilini</h1>
+            <div class="hero-role">
+                I build <span class="typed-word" id="typed"></span>
+            </div>
+            <p class="hero-desc">
+                Software Engineering undergraduate at University of Kelaniya, Sri Lanka. Passionate about building clean, efficient, and meaningful digital experiences.
             </p>
-            <a href="#" class="btn">Hire me</a>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View My Work →</a>
+                <a href="#contact" class="btn btn-outline">Let's Connect</a>
+            </div>
+            <div class="hero-socials">
+                <a href="#" class="social-link" aria-label="GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Email">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+            </div>
         </div>
-    </section>
+        <div class="hero-avatar-wrap">
+            <div class="avatar-ring">
+                
+  alt="Seneshka Randilini" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+                     style="display:none" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background gradient blob -->
+                        <defs>
+                            <radialGradient id="bg" cx="50%" cy="60%" r="50%">
+                                <stop offset="0%" stop-color="#1D9E75" stop-opacity="0.2"/>
+                                <stop offset="100%" stop-color="#0a1f17" stop-opacity="0"/>
+                            </radialGradient>
+                            <clipPath id="bodyClip">
+                                <rect x="55" y="130" width="90" height="90" rx="6"/>
+                            </clipPath>
+                        </defs>
+                        <ellipse cx="100" cy="190" rx="75" ry="30" fill="url(#bg)"/>
+                        <!-- Shoulders / clothing -->
+                        <path d="M40 200 Q55 155 75 148 Q100 160 125 148 Q145 155 160 200 Z" fill="#0e2e24"/>
+                        <path d="M75 148 Q100 165 125 148 L122 170 Q100 185 78 170 Z" fill="#1D9E75" opacity="0.7"/>
+                        <!-- Collar -->
+                        <path d="M88 150 L100 165 L112 150" fill="none" stroke="#1D9E75" stroke-width="1.5" stroke-linejoin="round"/>
+                        <!-- Neck -->
+                        <rect x="88" y="127" width="24" height="22" rx="6" fill="#c8956e"/>
+                        <!-- Head -->
+                        <ellipse cx="100" cy="105" rx="34" ry="36" fill="#c8956e"/>
+                        <!-- Hair -->
+                        <path d="M67 95 Q68 62 100 60 Q132 62 133 95 Q128 75 120 70 Q100 60 80 70 Q72 75 67 95 Z" fill="#2c1a0e"/>
+                        <path d="M67 95 Q64 108 68 120 Q67 105 69 98 Z" fill="#2c1a0e"/>
+                        <path d="M133 95 Q136 108 132 120 Q133 105 131 98 Z" fill="#2c1a0e"/>
+                        <!-- Ears -->
+                        <ellipse cx="66.5" cy="106" rx="5" ry="7" fill="#c8956e"/>
+                        <ellipse cx="133.5" cy="106" rx="5" ry="7" fill="#c8956e"/>
+                        <!-- Eyes -->
+                        <ellipse cx="88" cy="105" rx="5" ry="5.5" fill="#1a0a00"/>
+                        <ellipse cx="112" cy="105" rx="5" ry="5.5" fill="#1a0a00"/>
+                        <circle cx="89.5" cy="103.5" r="1.5" fill="white" opacity="0.8"/>
+                        <circle cx="113.5" cy="103.5" r="1.5" fill="white" opacity="0.8"/>
+                        <!-- Eyebrows -->
+                        <path d="M82 98 Q88 95 94 97" fill="none" stroke="#2c1a0e" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M106 97 Q112 95 118 98" fill="none" stroke="#2c1a0e" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Nose -->
+                        <path d="M99 107 Q97 114 100 116 Q103 114 101 107" fill="none" stroke="#a87050" stroke-width="1.2" stroke-linecap="round"/>
+                        <!-- Smile -->
+                        <path d="M91 122 Q100 129 109 122" fill="none" stroke="#a87050" stroke-width="1.8" stroke-linecap="round"/>
+                        <!-- Code icon overlay on shirt -->
+                        <text x="100" y="193" text-anchor="middle" fill="#1D9E75" font-size="11" font-family="monospace" opacity="0.9">{ }</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="avatar-chip chip1">
+                <span class="chip-dot"></span>
+                <span>2nd Year Undergrad</span>
+            </div>
+            <div class="avatar-chip chip2">
+                <span class="chip-dot"></span>
+                <span>Uni of Kelaniya</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="section-label">get to know me</div>
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I'm <strong>Seneshka Randilini</strong>, a passionate software engineering student at the <strong>University of Kelaniya</strong>, Sri Lanka. Currently in my second year, I'm on a journey to master the craft of building reliable, scalable, and user-friendly software.</p>
+                <p>I love turning complex problems into elegant solutions. Whether it's designing a clean front-end experience or architecting backend systems, I bring curiosity and care to everything I build.</p>
+                <p>When I'm not coding, you'll find me exploring open-source projects, learning new frameworks, and challenging myself with competitive programming problems.</p>
+                <div class="skills-heading">Technologies I work with</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML & CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Figma</span>
+                </div>
+                <a href="#" class="btn btn-outline" style="margin-top: 2rem; display: inline-flex;">Download CV →</a>
+            </div>
+            <div class="about-stats">
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <div class="stat-num">2nd</div>
+                        <div class="stat-label">Year of Degree</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-label">Projects built</div>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school">University of Kelaniya</div>
+                    <div class="edu-degree">BSc (Hons) in Software Engineering</div>
+                    <div class="edu-year">2023 – Present</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school">Interested in</div>
+                    <div class="edu-degree">Full-Stack Development · UI/UX · Open Source</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <div class="section-label">featured work</div>
+        <h2>My Projects</h2>
+        <div class="section-line"></div>
+        <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="section-label">get in touch</div>
+        <h2>Let's Connect</h2>
+        <div class="section-line"></div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Open to opportunities &amp; collaborations</h3>
+                <p>I'm actively looking for internship opportunities, freelance projects, and interesting open-source collaborations. Feel free to reach out — I'd love to hear from you!</p>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <span>seneshka.randilini@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <span>Kelaniya, Sri Lanka</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <span>University of Kelaniya, Faculty of Computing &amp; Technology</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message →</button>
+                <div class="form-feedback" id="formFeedback"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 <span>Seneshka Randilini</span> · Built with passion in Sri Lanka 🇱🇰</p>
+</footer>
+
 </body>
 </html>
