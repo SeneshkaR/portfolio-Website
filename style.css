@@ -576,3 +576,57 @@ footer span { color: var(--teal); }
     background: radial-gradient(circle at 30% 40%, rgba(29,158,117,0.1) 0%, transparent 70%);
     pointer-events: none;
 }
+
+/* PROJECT LINK BUTTONS */
+.project-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.github-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.github-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+}
+
+.live-btn {
+    background: var(--teal);
+    border: 1px solid var(--teal);
+    color: #fff;
+}
+
+.live-btn:hover {
+    background: var(--teal-mid);
+    transform: translateY(-2px);
+}
+
+/* Make project card hover consistent */
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-links {
+    margin-top: auto;
+}

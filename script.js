@@ -76,35 +76,43 @@ function typeEffect() {
 
 typeEffect();
 
-// PROJECT DATA
+// PROJECT DATA with GitHub Links
 const projects = [
     {
         icon: '🛒',
         title: 'Amazon Frontend Clone',
-        desc: 'A pixel-perfect clone of the Amazon web interface, recreating the homepage, product listings, navigation bar, and cart UI. Built with pure HTML and CSS, focusing on layout precision and responsive design.',
-        tech: ['HTML', 'CSS']
+        desc: 'A pixel-perfect clone of the Amazon web interface, recreating the homepage, product listings, navigation bar, and cart UI with interactive add-to-cart functionality. Built with HTML, CSS, and JavaScript.',
+        tech: ['HTML', 'CSS', 'JavaScript'],
+        githubUrl: 'https://github.com/SeneshkaR/amazon-project',
+        liveUrl: null // No live demo yet
     },
     {
         icon: '▶️',
         title: 'YouTube Frontend Clone',
-        desc: 'A faithful recreation of the YouTube web interface including the homepage grid, sidebar navigation, video cards, and header with search bar. Demonstrates strong CSS Grid and Flexbox skills.',
-        tech: ['HTML', 'CSS']
+        desc: 'A faithful recreation of the YouTube web interface including the homepage grid, sidebar navigation, video cards, and header with search bar. Demonstrates strong CSS Grid and Flexbox skills. Built for SESA Mentorship Task 01.',
+        tech: ['HTML', 'CSS'],
+        githubUrl: 'https://github.com/SeneshkaR/youtube-frontend-clone',
+        liveUrl: null // Add live demo URL if available
     },
     {
         icon: '🎬',
         title: 'Netflix Landing Page',
         desc: 'Responsive Netflix landing page clone with hero section, content rows, and hover effects. Built to practice modern CSS techniques and layout patterns.',
-        tech: ['HTML', 'CSS', 'JavaScript']
+        tech: ['HTML', 'CSS', 'JavaScript'],
+        githubUrl: null,
+        liveUrl: null
     },
     {
         icon: '✅',
         title: 'Task Manager App',
         desc: 'A feature-rich task management application with add, edit, delete, and filter functionalities. Uses local storage to persist user data.',
-        tech: ['JavaScript', 'HTML', 'CSS']
+        tech: ['JavaScript', 'HTML', 'CSS'],
+        githubUrl: null,
+        liveUrl: null
     }
 ];
 
-// RENDER PROJECTS
+// RENDER PROJECTS with GitHub Links
 const projectsGrid = document.getElementById('projectsGrid');
 
 if (projectsGrid) {
@@ -116,17 +124,26 @@ if (projectsGrid) {
             `<span class="tech-badge">${tech}</span>`
         ).join('');
         
+        // Create buttons HTML based on available URLs
+        let buttonsHtml = '';
+        if (project.githubUrl) {
+            buttonsHtml += `<a href="${project.githubUrl}" target="_blank" class="project-link-btn github-btn">🐙 GitHub</a>`;
+        }
+        if (project.liveUrl) {
+            buttonsHtml += `<a href="${project.liveUrl}" target="_blank" class="project-link-btn live-btn">🔗 Live Demo</a>`;
+        }
+        
         projectCard.innerHTML = `
             <div class="project-icon">${project.icon}</div>
             <div class="project-title">${project.title}</div>
             <div class="project-desc">${project.desc}</div>
             <div class="tech-badges">${techBadges}</div>
+            ${buttonsHtml ? `<div class="project-links">${buttonsHtml}</div>` : ''}
         `;
         
         projectsGrid.appendChild(projectCard);
     });
 }
-
 // CONTACT FORM HANDLING
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
