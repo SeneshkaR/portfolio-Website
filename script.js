@@ -171,8 +171,6 @@ if (contactForm) {
         
         // Simulate API call (replace with actual backend integration)
         try {
-            // Here you would typically send data to your backend
-            // For now, we'll simulate a successful send
             await new Promise(resolve => setTimeout(resolve, 1000));
             
             // Store in localStorage for demo (optional)
@@ -251,69 +249,113 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// DOWNLOAD CV FUNCTIONALITY
+// DOWNLOAD CV FUNCTIONALITY - Downloads Word Document
 const downloadBtn = document.getElementById('downloadCV');
+
 if (downloadBtn) {
     downloadBtn.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Create a simple CV content (you can replace this with actual PDF generation)
-        const cvContent = `
-SENESHKA RANDILINI
-Software Engineering Undergraduate
-
-EDUCATION:
-• BSc (Hons) in Software Engineering - University of Kelaniya (2023 - Present)
-• 2nd Year Student
-
-SKILLS:
-• HTML, CSS, JavaScript
-• React, Node.js
-• Python, Java
-• SQL, Git & GitHub
-• Figma
-
-PROJECTS:
-• Amazon Frontend Clone - Pixel-perfect Amazon interface clone
-• YouTube Frontend Clone - YouTube homepage recreation
-• Netflix Landing Page - Responsive streaming platform clone
-• Task Manager App - Full-featured task management application
-
-CONTACT:
-Email: seneshka.randilini@gmail.com
-Location: Kelaniya, Sri Lanka
-        `;
+        // Path to your CV file
+        const cvFilePath = 'CV.docx';
+        const fileName = 'Seneshka_Randilini_CV.docx';
         
-        // Create blob and download
-        const blob = new Blob([cvContent], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Seneshka_Randilini_CV.txt';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        // Show loading state
+        const originalText = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = '📄 Downloading...';
+        downloadBtn.style.opacity = '0.7';
         
-        // Show feedback
-        const feedback = document.createElement('div');
-        feedback.textContent = '✓ CV download started!';
-        feedback.style.position = 'fixed';
-        feedback.style.bottom = '20px';
-        feedback.style.right = '20px';
-        feedback.style.backgroundColor = '#1D9E75';
-        feedback.style.color = '#fff';
-        feedback.style.padding = '10px 20px';
-        feedback.style.borderRadius = '8px';
-        feedback.style.zIndex = '1000';
-        feedback.style.fontSize = '0.9rem';
-        document.body.appendChild(feedback);
+        // Create a temporary anchor element to trigger download
+        const link = document.createElement('a');
+        link.href = cvFilePath;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
         
+        // Show success message
         setTimeout(() => {
-            feedback.remove();
-        }, 3000);
+            downloadBtn.innerHTML = originalText;
+            downloadBtn.style.opacity = '1';
+            
+            // Show feedback notification
+            showNotification('✓ CV download started! Check your downloads folder.', '#1D9E75');
+        }, 500);
     });
 }
+
+// Helper function to show beautiful notifications
+function showNotification(message, color) {
+    // Remove any existing notification
+    const existingNotification = document.querySelector('.cv-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'cv-notification';
+    notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 20px;">📄</span>
+            <span>${message}</span>
+        </div>
+    `;
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: ${color};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 10000;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        animation: slideInRight 0.3s ease;
+        font-family: 'DM Sans', sans-serif;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Remove notification after 3 seconds
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Add CSS animations for notifications
+const notificationStyles = document.createElement('style');
+notificationStyles.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(notificationStyles);
 
 // NAVBAR BACKGROUND CHANGE ON SCROLL
 const nav = document.getElementById('nav');
