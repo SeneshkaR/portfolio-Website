@@ -540,8 +540,24 @@ footer span { color: var(--teal); }
     .hero-desc { margin: 0 auto 2rem; }
     .hero-actions { justify-content: center; }
     .hero-socials { justify-content: center; }
-    .hero-avatar-wrap { display: none; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; } }
+    
+    .hero-avatar-wrap { 
+        display: flex; 
+        justify-content: center;
+        margin: 2rem auto 1rem;
+    }
+    
+    .avatar-ring {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .avatar-chip {
+        display: none; /* Hide floating chips on mobile for cleaner look */
+    }
+    
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+}
 
     /* PROFILE PHOTO STYLES  */
 .profile-photo {
